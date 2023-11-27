@@ -29,61 +29,16 @@ public class CameraInputManager : MonoBehaviour
     private float m_RenderDistanceLenght;
     private bool m_CanFollow = false;
 
-    private void Start()
-    {
-        m_DeadZoneSwingSprite.transform.localScale = new Vector3(m_DeadZoneSwingRadius * 2, m_DeadZoneSwingRadius * 2, 0);
-        m_InputZoneBallSprite.transform.localScale = new Vector3(m_InputZoneBallRadius * 2, m_InputZoneBallRadius * 2, 0);
-
-        GameManager.instance.EventManager.Register(Constants.SPAWN_BALL, SetCanFollow);
-
-        m_InputDirectionRenderer = m_Ball.transform.GetChild(0).GetComponent<LineRenderer>();
-        m_CalculatedDirection = m_Ball.transform.GetChild(1).GetComponent<LineRenderer>();
-    }
-
 
     // Update is called once per frame
     void Update()
     {
-        //tracking player by camera continously
-        if (m_CanFollow)
-            GameManager.instance.EventManager.TriggerEvent(Constants.START_CAMERA_TRACKING, m_Ball.position);
-
-        //showing graphic part of inputzone if the player is stopeed
-        if (m_Ball.GetComponent<Rigidbody>().velocity.magnitude == 0f)
-            ShowHideSprite(m_InputZoneBallSprite, m_Ball.position, true);
-        else
-            m_InputZoneBallSprite.SetActive(false);
-
-        //hiding touch deadzone if there're no touchs
-        if (Input.touchCount == 0)
-        {
-            m_DeadZoneSwingSprite.SetActive(false);
-            EnableDisableRenderers(false);
-            return;
-        }
-
         //Gets the start position and triggers player or camera movement
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
 
-            Vector3 touchPosition = GetTouchWorldSpace(touch);
-
-            //Debug.Log("touch: " + touchPosition);
-
-            //taking the first touch
-            if (touch.phase == TouchPhase.Began)
-            {
-                m_TouchStartPosition = touchPosition;
-                m_TouchScreenStartPos = touch.position;
-                m_InputDirectionRenderer.SetPosition(0, m_Ball.position);
-            }
-
             bool isInInputZone = CheckInInputZoneBall();
-
-            //showing deadzone when touch
-            if (isInInputZone && touch.phase == TouchPhase.Began && m_Ball.GetComponent<Rigidbody>().velocity.magnitude == 0f)
-                ShowHideSprite(m_DeadZoneSwingSprite, m_TouchStartPosition, true);
 
             if (touch.phase == TouchPhase.Moved)
             {
@@ -92,35 +47,6 @@ public class CameraInputManager : MonoBehaviour
                 {
                     //rotate camera if outside the inputzone
                     GameManager.instance.EventManager.TriggerEvent(Constants.UPDATE_CAMERA_ROTATION, touch.deltaPosition);
-                }
-                else
-                {
-                    if (Vector3.Distance(m_TouchStartPosition, GetTouchWorldSpace(touch)) > m_DeadZoneSwingRadius)
-                    {
-                        Vector3 direction = GetTouchWorldSpace(touch) - m_TouchStartPosition;
-                        m_TouchTempPosition = m_TouchStartPosition + (m_DeadZoneSwingRadius * direction.normalized);
-                        m_InputDirectionRenderer.SetPosition(0, m_Ball.position);
-
-                        if (Vector3.Distance(m_TouchStartPosition, GetTouchWorldSpace(touch)) <= m_MaxDistanceSwing)
-                            m_TouchEndPosition = GetTouchWorldSpace(touch);
-                        else
-                        {
-                            Vector3 dir = GetTouchWorldSpace(touch) - m_TouchStartPosition;
-                            m_TouchEndPosition = m_TouchStartPosition + (m_MaxDistanceSwing * dir.normalized);
-                        }
-
-
-
-                        m_InputDirectionRenderer.SetPosition(1, m_TouchEndPosition - (m_TouchTempPosition - m_Ball.position));
-
-                        m_MovePassed = true;
-
-                        CalculateWay();
-
-                        if (m_Ball.GetComponent<Rigidbody>().velocity.magnitude == 0f)
-                            EnableDisableRenderers(true);
-                    }
-                    else m_MovePassed = false;
                 }
             }
 
