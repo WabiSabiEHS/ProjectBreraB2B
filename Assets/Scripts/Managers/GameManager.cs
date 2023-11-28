@@ -14,13 +14,6 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         m_UIManager = GetComponentInChildren<UIManager>();
-
-
-        instance.EventManager.Register(Constants.WIN_GAME, WinGame);
     }
 
-    public void WinGame(object[] param)
-    {
-        SceneManager.LoadScene((int)param[0]);
-    }
 }

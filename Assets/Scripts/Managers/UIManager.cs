@@ -6,13 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_Score;
-    [SerializeField] private TextMeshProUGUI m_UISwings;
-    [SerializeField] private TextMeshProUGUI m_UITotalSwings;
-    [SerializeField] private TextMeshProUGUI m_UILevelCount;
-    private float m_TotalSwingsCount;
-    private float m_LevelSwingsCount;
-
     [SerializeField] private GameObject m_MainMenuScreen;
     [SerializeField] private GameObject m_OptionsScreen;
     [SerializeField] private Canvas m_PauseScreen;
@@ -20,24 +13,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.EventManager.TriggerEvent(Constants.LOAD_FLOAT, Constants.TOTAL_SWINGS);
-        GameManager.instance.EventManager.Register(Constants.UPDATE_LEVEL_SWINGS, UpdateLevelSwingsCount);
-        //check if it exist a UILevelCount, and if does it sets its text to the current level number
-        if(m_UILevelCount != null)
-		{
-			Scene actualScene = SceneManager.GetActiveScene();
-		    m_UILevelCount.text = (actualScene.buildIndex).ToString();
-		}
-    }
 
-    /// <summary>
-    /// update the total count of swings in the entire game
-    /// </summary>
-    /// <param name="param"></param>
-    public void UpdateTotalSwings()
-    {
-        GameManager.instance.EventManager.TriggerEvent(Constants.SAVE_FLOAT, Constants.TOTAL_SWINGS, m_TotalSwingsCount);
-        m_UITotalSwings.text = m_TotalSwingsCount.ToString();
     }
 
     /// <summary>
@@ -45,21 +21,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void RestartLevel()
     {
-        m_TotalSwingsCount -= m_LevelSwingsCount;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-        UpdateTotalSwings();
-    }
-
-    /// <summary>
-    /// update the count of swings for the level
-    /// </summary>
-    /// <param name="param"></param>
-    public void UpdateLevelSwingsCount(object[] param)
-    {
-        m_LevelSwingsCount++;
-        m_TotalSwingsCount++;
-        UpdateTotalSwings();
-        m_UISwings.text = m_LevelSwingsCount.ToString();
     }
 
     /// <summary>

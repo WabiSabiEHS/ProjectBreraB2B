@@ -38,11 +38,11 @@ public class ExCameraController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.EventManager.Register(Constants.UPDATE_CAMERA_ROTATION, UpdateRotation);
-        GameManager.instance.EventManager.Register(Constants.UPDATE_CAMERA_ZOOMING, UpdateZooming);
-        GameManager.instance.EventManager.Register(Constants.STOP_CAMERA_ZOOMING, StopZooming);
-        GameManager.instance.EventManager.Register(Constants.START_CAMERA_TRACKING, CameraTracking);
-        GameManager.instance.EventManager.Register(Constants.STOP_CAMERA_TRACKING, StopTracking);
+        //GameManager.instance.EventManager.Register(Constants.UPDATE_CAMERA_ROTATION, UpdateRotation);
+        //GameManager.instance.EventManager.Register(Constants.UPDATE_CAMERA_ZOOMING, UpdateZooming);
+        //GameManager.instance.EventManager.Register(Constants.STOP_CAMERA_ZOOMING, StopZooming);
+        //GameManager.instance.EventManager.Register(Constants.START_CAMERA_TRACKING, CameraTracking);
+        //GameManager.instance.EventManager.Register(Constants.STOP_CAMERA_TRACKING, StopTracking);
         m_Camera = GetComponentInChildren<Camera>();
         CheckZoomingDistance();
 

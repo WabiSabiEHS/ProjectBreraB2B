@@ -27,6 +27,7 @@ public class CameraController : MonoBehaviour
     private bool m_CanZoom = false;
 
     private float m_RotationY;
+    private float m_RotationX;
     private Vector3 m_OriginalRotation;
 
 
@@ -80,8 +81,10 @@ public class CameraController : MonoBehaviour
         Vector2 delta = (Vector2)param[0];
 
         m_RotationY += delta.x * Time.deltaTime * m_RotationSpeed;
+        m_RotationX += delta.y * Time.deltaTime * m_RotationSpeed;
 
-        transform.eulerAngles = new Vector3(0f, m_RotationY, 0f);
+        transform.parent.rotation = Quaternion.Euler(0f, m_RotationY, 0f);
+        transform.eulerAngles = new Vector3(m_RotationX, m_RotationY, 0f);
     }
 
     #endregion
