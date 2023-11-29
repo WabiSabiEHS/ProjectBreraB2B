@@ -818,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728843611}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.38, z: 0.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -837,11 +837,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f4350cdf4e6b146bf67d98fd1572e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxDistance: 0
-  m_MinDistance: 0
   m_RotationSpeed: 30
-  m_ZoomingSensibility: 0
-  m_MouseZoomingSensibility: 0
+  m_MaxVerticalRotation: 58
+  m_MinVerticalRotation: -58
+  m_InvertXRotation: 0
+  m_InvertYRotation: 0
+  m_MaxDistance: 70
+  m_MinDistance: 10
+  m_ZoomingSensibility: 10
+  m_MouseZoomingSensibility: 10
 --- !u!1 &803189951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1870,7 @@ GameObject:
   - component: {fileID: 1803716427}
   - component: {fileID: 1803716426}
   - component: {fileID: 1803716428}
+  - component: {fileID: 1803716429}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1933,6 +1938,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!54 &1803716429
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803716425}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 3
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1948296315
 GameObject:
   m_ObjectHideFlags: 0

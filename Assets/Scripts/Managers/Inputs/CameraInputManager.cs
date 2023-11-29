@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CameraInputManager : MonoBehaviour
@@ -12,13 +13,32 @@ public class CameraInputManager : MonoBehaviour
     [SerializeField] private GameObject m_JoyStick;
     [SerializeField] private float m_JoyStickOffSetRadius;
 
+    private int m_ActualTouchCount = 1;
+
     // Update is called once per frame
     void Update()
     {
-        //Gets the start position and triggers player or camera movement
-        if (Input.touchCount == 1)
+        if (Input.touchCount > 1)
         {
-            Touch touch = Input.GetTouch(0);
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                if (CheckInInputZone(Input.GetTouch(i).position))
+                    m_ActualTouchCount--;
+
+                else
+                    m_ActualTouchCount++;
+            }
+        }
+
+        else if (Input.touchCount == 1)
+        {
+            m_ActualTouchCount = 1;
+        }
+
+        //Gets the start position and triggers player or camera movement
+        if (m_ActualTouchCount == 1)
+        {
+            Touch touch = Input.GetTouch(m_ActualTouchCount - 1);
 
             if (touch.phase == TouchPhase.Began)
             {
@@ -36,11 +56,13 @@ public class CameraInputManager : MonoBehaviour
                 /*}*/
             }
         }
+
         //Gets the 2 start positions and triggers camera zooming
-        else if (/*!CheckInInputZone() &&*/ Input.touchCount == 2)
+        else if (Input.touchCount == 2)
         {
             Touch touch = Input.GetTouch(0);
             Touch touch2 = Input.GetTouch(1);
+
             if (touch.phase == TouchPhase.Began || touch2.phase == TouchPhase.Began)
             {
                 m_TouchScreenStartPos = touch.position;
@@ -57,6 +79,23 @@ public class CameraInputManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Checks if the touch is in the Ball Deadzone (returns a bool)
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckInInputZone(Vector2 touch)
+    {
+        float TouchDistance = Vector2.Distance(touch, m_JoyStick.transform.position);
+
+        if (TouchDistance > m_JoyStickOffSetRadius)
+            return false;
+
+        else 
+            return true;
+    }
+
+
 
     /// <summary>
     /// Returns the worldspace position of the touch (returns a Vector3)
@@ -82,19 +121,4 @@ public class CameraInputManager : MonoBehaviour
 
     //    return touchPosition;
     //}
-
-    /// <summary>
-    /// Checks if the touch is in the Ball Deadzone (returns a bool)
-    /// </summary>
-    /// <returns></returns>
-    public bool CheckInInputZone(Vector2 touch)
-    {
-        float TouchDistance = Vector2.Distance(touch, m_JoyStick.transform.position);
-
-        if (TouchDistance > m_JoyStickOffSetRadius)
-            return false;
-
-        else 
-            return true;
-    }
 }
