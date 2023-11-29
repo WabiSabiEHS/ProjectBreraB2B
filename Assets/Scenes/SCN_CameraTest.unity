@@ -1082,15 +1082,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f4350cdf4e6b146bf67d98fd1572e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RotationSpeed: 20
+  m_RotationSpeed: 10
   m_MaxVerticalRotation: 58
   m_MinVerticalRotation: -58
   m_InvertXRotation: 1
   m_InvertYRotation: 1
   m_MaxDistance: 70
   m_MinDistance: 10
-  m_ZoomingSensibility: 0.2
-  m_MouseZoomingSensibility: 5
+  m_ZoomingSensibility: 0.12
+  m_MouseZoomingSensibility: 3
 --- !u!1 &803189951
 GameObject:
   m_ObjectHideFlags: 0
