@@ -11,6 +11,8 @@ public class GameManager : Singleton<GameManager>
 
     public EventManager EventManager { get => m_EventManager; }
 
+    public bool m_CanPlayerMove = true;
+
     private void Start()
     {
         m_UIManager = GetComponentInChildren<UIManager>();

@@ -14,12 +14,15 @@ public class PlayerMovementComponent : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.MovementAxis.x != 0f || InputManager.MovementAxis.y != 0f)
+        if (GameManager.instance.m_CanPlayerMove)
         {
-            Vector3 horizontal = transform.right * InputManager.MovementAxis.x * speed;
-            Vector3 vertical = transform.forward * InputManager.MovementAxis.y * speed;
+            if (InputManager.MovementAxis.x != 0f || InputManager.MovementAxis.y != 0f)
+            {
+                Vector3 horizontal = transform.right * InputManager.MovementAxis.x * speed;
+                Vector3 vertical = transform.forward * InputManager.MovementAxis.y * speed;
 
-            m_RigidBody.velocity = vertical + horizontal;
+                m_RigidBody.velocity = vertical + horizontal;
+            }
         }
     }
 }
