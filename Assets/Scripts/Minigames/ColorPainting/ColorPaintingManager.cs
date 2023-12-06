@@ -24,11 +24,19 @@ public class ColorPaintingManager : MonoBehaviour
         m_SelectedColor = m_ColorIDList[Color];
     }
 
-    public void PieceRecolor(string rightColor)
+    public void DeletePiece(string rightColor)
     {
         if (m_SelectedColor == m_ColorIDList[rightColor])
         {
-            return;
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject obj = hit.collider.gameObject;
+
+                obj.SetActive(false);
+            }
         }
 
         else return;
