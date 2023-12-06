@@ -23,7 +23,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         m_FollowFinger = false;
-        PiecePositioning();
+        PiecePositioning(eventData);
     }
 
     public void OnPointerMove(PointerEventData eventData)
@@ -34,14 +34,36 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    private void PiecePositioning()
+    private void PiecePositioning(PointerEventData eventData)
     {
         if (Vector2.Distance(transform.position, m_RightPosition.position) <= m_DistanceRadius)
         {
             transform.position = m_RightPosition.position;
         }
 
-        
+        else
+        {
+            bool touchedPuzzle = false;
+            List<RaycastResult> raycastResults = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, raycastResults);
+            
+            foreach (var collider in raycastResults)
+            {
+                if (collider.gameObject.TryGetComponent(out Puzzle puzzle))
+                {
+                    Debug.Log("PUZZLE!!!!!!!!");
+                    touchedPuzzle = true;
+                    break;
+                }
+
+            
+            }
+            if (!touchedPuzzle)
+            {
+                Debug.Log("NOT PUZZLE");
+                transform.position = m_StartingPos;
+            }
+        }
     }
 
     private void OnDrawGizmos()
