@@ -520,7 +520,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TilePrefab: {fileID: 1606685926919220003, guid: 39789cb4d928f3c46993353d590263c3, type: 3}
-  m_Sprites: []
+  m_Sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
