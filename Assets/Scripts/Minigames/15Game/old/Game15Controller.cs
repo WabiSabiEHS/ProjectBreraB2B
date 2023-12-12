@@ -19,19 +19,17 @@ public class Game15Controller : MonoBehaviour
     private void Init()
     { 
         int n = 0;
-        int h = 4;
 
         for (int y = 3; y>=0; y--)
         {
             for (int x = 0; x<4; x++)
             {
                 Tile15Game tile = Instantiate(m_TilePrefab, new Vector2(x, y), Quaternion.identity);
-                tile.Init(x, h, n + 1, m_Sprites[n], ClickToSwap);
+                tile.Init(x, y, n + 1, m_Sprites[n], ClickToSwap);
 
                 m_Tiles[x, y] = tile;
 
                 n++;
-                h--;
             }
         }
     }

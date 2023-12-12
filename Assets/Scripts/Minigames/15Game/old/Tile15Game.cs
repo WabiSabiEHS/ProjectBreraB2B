@@ -34,6 +34,7 @@ public class Tile15Game : MonoBehaviour, IPointerDownHandler
         {
             m_SwapFunc(m_Xpos, m_Ypos);
         }
+        Debug.Log("Clicked " + Index);
     }
  
     public bool IsEmpty()
