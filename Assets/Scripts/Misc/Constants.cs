@@ -23,4 +23,6 @@ public static class Constants
 
     public static string ANIM_START_SINK = "StartSinkingAnimation";
     public static string SPAWN_BALL = "SpawnBall";
+
+    public static string GAME15_CHANGE_IMAGE = "ChangeImage";
 }

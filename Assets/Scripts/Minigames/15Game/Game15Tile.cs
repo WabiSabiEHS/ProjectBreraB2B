@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Game15Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameObject m_Image;
+
+    private void Start()
     {
-        
+        GameManager.instance.EventManager.Register(Constants.GAME15_CHANGE_IMAGE, ChangeImage);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeImage(object[] param)
     {
-        
+        m_Image = (GameObject)param[0];
+        m_Image.transform.position = transform.position;
     }
 }
