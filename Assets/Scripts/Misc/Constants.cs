@@ -25,4 +25,5 @@ public static class Constants
     public static string SPAWN_BALL = "SpawnBall";
 
     public static string GAME15_CHANGE_IMAGE = "ChangeImage";
+    public static string GAME15_CHANGE_IMAGE_POS = "ChangePosition";
 }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Game15Tile : MonoBehaviour
+public class Game15Tile : MonoBehaviour, IPointerDownHandler
 {
-    private GameObject m_Image;
+    [HideInInspector] public Game15Image m_Image;
+    public int m_Xpos;
+    public int m_Ypos;
 
     private void Start()
     {
@@ -13,7 +16,15 @@ public class Game15Tile : MonoBehaviour
 
     public void ChangeImage(object[] param)
     {
-        m_Image = (GameObject)param[0];
-        m_Image.transform.position = transform.position;
+        m_Image = (Game15Image)param[0];
+        if (m_Image != null)
+        {
+            m_Image.transform.position = transform.position;
+        }
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        
     }
 }
