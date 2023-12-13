@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     public EventManager EventManager { get => m_EventManager; }
     public ColorPaintingManager ColorPaintingManager { get => m_ColorPaintingManager; }
     
-    public bool m_CanPlayerMove = true;
+    public PlayerManager PlayerManager;
 
     private void Start()
     {

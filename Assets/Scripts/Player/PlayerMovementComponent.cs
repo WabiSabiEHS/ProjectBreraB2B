@@ -14,7 +14,7 @@ public class PlayerMovementComponent : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.m_CanPlayerMove)
+        if (GameManager.instance.PlayerManager.CanPlayerMove)
         {
             if (InputManager.MovementAxis.x != 0f || InputManager.MovementAxis.y != 0f)
             {

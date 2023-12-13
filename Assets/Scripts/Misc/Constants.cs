@@ -3,24 +3,28 @@ using System.Collections.Generic;
 
 public static class Constants
 {
+    //---GAME MANAGER---
+    public static string TOGGLE_PLAYER_UI = "TogglePlayerUI";
+
+    //---CAMERA------
+    //rotation
     public static string UPDATE_CAMERA_ROTATION = "UpdateCameraRotation";
+    //zoom
     public static string UPDATE_CAMERA_ZOOMING = "UpdateCameraZooming";
     public static string STOP_CAMERA_ZOOMING = "StopCameraZooming";
 
+    //---SAVE MANAGER---
     public static string SAVE_FLOAT = "SaveFloat";
     public static string LOAD_FLOAT = "LoadFloat";
 
-    public static string LOAD_NEXT_LEVEL = "LoadNextLevel";
-
+    //---SOUND MANAGER---
     public static string PLAY_SOUND = "PlaySound";
 
-    public static string SFX_PRESS = "SFX_Press_01a";
-    public static string SFX_LIFT = "SFX_Lift_01a";
-    public static string SFX_HITBALL = "SFX_HitBall_01a";
-    public static string SFX_HITWALL = "SFX_HitWall_01a";
-    public static string SFX_BALLOUT = "SFX_BallOut_01a";
-    public static string SFX_WIN = "SFX_Win_01a";
+    //---PAINTINGS MANAGER---
+    public static string ACTIVATE_PUZZLE = "ActivatePuzzle";
+    public static string CHANGE_PAINTING_DESCRIPTION = "ChangeDescription";
 
-    public static string ANIM_START_SINK = "StartSinkingAnimation";
-    public static string SPAWN_BALL = "SpawnBall";
+    //---COLOR MINIGAME---
+    public static string COLOR_MG_CHANGE_SELECTED_COLOR = "ChangeSelectedColor";
+    public static string COLOR_MG_DELETE_PIECE = "ChangeSelectedColor";
 }

@@ -17,7 +17,7 @@ public class CameraInputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.m_CanPlayerMove)
+        if (GameManager.instance.PlayerManager.CanPlayerMove)
         {
             if (Input.touchCount > 1)
             {
