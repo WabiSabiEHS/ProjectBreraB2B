@@ -9,7 +9,7 @@ public class ColorTubeComponent : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameManager.instance.ColorPaintingManager.ChangeSelectedColor(m_Color);
+        GameManager.instance.EventManager.TriggerEvent(Constants.COLOR_MG_CHANGE_SELECTED_COLOR, m_Color);
     }
 
 }

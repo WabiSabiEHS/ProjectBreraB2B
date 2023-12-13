@@ -13,21 +13,23 @@ public class ColorPaintingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.EventManager.Register(Constants.COLOR_MG_CHANGE_SELECTED_COLOR, ChangeSelectedColor);
+
         for (int i = 0; i < m_Colors.Count; i++)
         {
             m_ColorIDList.Add(m_Colors[i], i);
         }
     }
 
-    public void ChangeSelectedColor(string Color)
+    public void ChangeSelectedColor(object[] param)
     {
-        m_SelectedColor = m_ColorIDList[Color];
-        Debug.Log("Color = " + Color);
+        m_SelectedColor = m_ColorIDList[(string)param[0]];
+        Debug.Log("Color = " + (string)param[0]);
     }
 
-    public bool DeletePiece(string rightColor)
+    public bool DeletePiece(string color)
     {
-        if (m_SelectedColor == m_ColorIDList[rightColor])
+        if (m_SelectedColor == m_ColorIDList[color])
         {
             return true;
         }
