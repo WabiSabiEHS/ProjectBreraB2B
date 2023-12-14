@@ -15,18 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     public void TogglePlayerUI(object[] param)
     {
-        if (PlayerUI.activeInHierarchy)
-        {
-            PlayerUI.SetActive(false);
-            CanPlayerMove = false;
-        }
-
-
-        else if (!PlayerUI.activeInHierarchy)
-        {
-            PlayerUI.SetActive(true);
-            CanPlayerMove = true;
-        }
+        PlayerUI.SetActive((bool)param[0]);
+            CanPlayerMove = (bool)param[0];     
     }
 
     public void TogglePlayerMovement(bool toggle)

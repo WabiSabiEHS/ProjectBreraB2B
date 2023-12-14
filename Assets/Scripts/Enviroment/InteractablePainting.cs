@@ -13,7 +13,7 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         GameManager.instance.PlayerManager.CanPlayerMove = false;
-        GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI);
+        GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI, false);
         GameManager.instance.EventManager.TriggerEvent(Constants.CHANGE_PAINTING_DESCRIPTION, m_Description, this);
     }
 
@@ -26,7 +26,8 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
 
         else if (!m_IsPuzzle)
         {
-            GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI);
+            GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI, true);
+            GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PAINTING_DESCRIPTION, true);
         }
 
     }

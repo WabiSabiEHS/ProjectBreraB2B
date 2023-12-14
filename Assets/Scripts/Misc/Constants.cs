@@ -5,6 +5,7 @@ public static class Constants
 {
     //---GAME MANAGER---
     public static string TOGGLE_PLAYER_UI = "TogglePlayerUI";
+    public static string TOGGLE_PAINTING_DESCRIPTION = "ToggleDescription";
 
     //---CAMERA------
     //rotation

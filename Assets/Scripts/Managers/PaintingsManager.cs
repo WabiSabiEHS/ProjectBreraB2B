@@ -9,18 +9,34 @@ public class PaintingsManager : MonoBehaviour
     [SerializeField] private GameObject m_DescriptionUI;
 
     private InteractablePainting m_SelectedPainting;
+    private bool m_CanOperDescription = true;
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.EventManager.Register(Constants.CHANGE_PAINTING_DESCRIPTION, ChangeDescription);
+        GameManager.instance.EventManager.Register(Constants.TOGGLE_PAINTING_DESCRIPTION, ToggleOpenDescription);
     }
 
     public void ChangeDescription(object[] param)
     {
-        m_DescriptionUI.SetActive(true);
-        m_PaintDescription.text = (string)param[0];
-        m_SelectedPainting = (InteractablePainting)param[1];
+        if (m_CanOperDescription)
+        {
+            m_DescriptionUI.SetActive(true);
+            m_PaintDescription.text = (string)param[0];
+            m_SelectedPainting = (InteractablePainting)param[1];
+            m_CanOperDescription = false;
+        }
+    }
+
+    public void CanOpenDescription()
+    {
+        m_CanOperDescription = true;
+    }
+
+    public void ToggleOpenDescription(object[] param)
+    {
+        m_CanOperDescription = (bool)param[0];
     }
 
     public void PlayPuzzle()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
@@ -39,6 +40,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (Vector2.Distance(transform.position, m_RightPosition.position) <= m_DistanceRadius)
         {
             transform.position = m_RightPosition.position;
+            gameObject.GetComponent<Image>().raycastTarget = false;
         }
 
         else
