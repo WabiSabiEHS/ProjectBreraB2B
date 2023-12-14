@@ -47,7 +47,5 @@ public class Game15Manager : MonoBehaviour
     public void SwapImage(object[] param)
     {
         Game15Tile tile = (Game15Tile)param[0];
-        
-        if ()
     }
 }
