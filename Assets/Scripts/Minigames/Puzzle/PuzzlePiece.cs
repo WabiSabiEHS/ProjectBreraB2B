@@ -19,12 +19,14 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         m_FollowFinger = true;
+        ToggleOthersClick(false);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         m_FollowFinger = false;
         PiecePositioning(eventData);
+        ToggleOthersClick(true);
     }
 
     public void OnPointerMove(PointerEventData eventData)
@@ -41,6 +43,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             transform.position = m_RightPosition.position;
             gameObject.GetComponent<Image>().raycastTarget = false;
+            GameManager.instance.EventManager.TriggerEvent(Constants.PUZZLE_MG_PIECE_IN_PLACE);
         }
 
         else
@@ -65,6 +68,15 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 Debug.Log("NOT PUZZLE");
                 transform.position = m_StartingPos;
             }
+        }
+    }
+
+    private void ToggleOthersClick(bool toggle)
+    {
+        for (int i = 0; i < transform.parent.childCount; i++)
+        {
+            if (transform.parent.GetChild(i) != this)
+                transform.parent.GetChild(i).GetComponent<Image>().raycastTarget = toggle;
         }
     }
 

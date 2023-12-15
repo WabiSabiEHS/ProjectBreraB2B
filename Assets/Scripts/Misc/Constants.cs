@@ -28,4 +28,8 @@ public static class Constants
     //---COLOR MINIGAME---
     public static string COLOR_MG_CHANGE_SELECTED_COLOR = "ChangeSelectedColor";
     public static string COLOR_MG_DELETE_PIECE = "ChangeSelectedColor";
+    public static string COLOR_MG_TILE_COMPLETED = "ColorTilesCompleted";
+
+    //---PUZZLE MINIGAME---
+    public static string PUZZLE_MG_PIECE_IN_PLACE = "PieceCorrectPlace";
 }
