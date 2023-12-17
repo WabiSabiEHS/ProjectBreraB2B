@@ -1,198 +1,117 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class GO15Manager : MonoBehaviour, IPuzzle
+public class GO15Manager : MonoBehaviour
 {
-    public static List<GO15WorldTile> SelectedTiles = new();
+    [SerializeField] private GO15Tile[] m_TileList = new GO15Tile[16];
+    private GO15Tile[,] m_Grid = new GO15Tile[4, 4];
 
-    public Transform CameraTriggerer;
-    public GO15WorldTile WorldTilePrefab;
-    public Transform WorldOrientation;
-    public float DefaultTimer;
-    [HideInInspector]
-    public bool GameTriggered;
-
-    private int m_width = 4;
-    private int m_height = 4;
-    private float m_timer;
-    private bool m_outOfTime;
-
-
-    private Grid<GO15Tile> m_grid;
-    private List<GO15WorldTile> m_worldTiles;
-
-    private static GO15Manager m_instance;
-
-
-
-    private void Awake()
+    void Start()
     {
-        m_instance = this;
-        m_timer = 0f;
-        m_outOfTime = true;
-
-        GeneratePuzzle();
-        ShuffleTile();
-        if (WorldOrientation != null) SetPositionAndRotation(WorldOrientation);
+        GameManager.instance.EventManager.Register(Constants.GO15_MG_SWAP_TILES, CheckNeighboringObjects);
+        GameManager.instance.EventManager.Register(Constants.GO15_MG_CHECK_WIN, CheckWin);
+        Init();
     }
 
-    private void Start()
+    private void Init()
     {
-        GameManager.instance.EventManager.Register(Constants.GAME15_START_PUZZLE, StartGame);
-        GameManager.instance.EventManager.Register(Constants.GAME15_RESTART_PUZZLE, ResetGame);
-        GameManager.instance.EventManager.Register(Constants.GAME15_FINISH_PUZZLE, EndGame);
-    }
-
-    private void Update() => UpdateTimer();
-
-    private void GeneratePuzzle()
-    {
-        m_grid = new Grid<GO15Tile>(m_width, m_height, WorldTilePrefab.transform.lossyScale.x, transform.position, (int x, int y) => new GO15Tile(x, y));
-        m_worldTiles = new();
-
-        for (int y = m_grid.GetHeight() - 1; y >= 0; y--)
+        int n = 0;
+        for (int i = 0; i < 4; i++)
         {
-            for (int x = 0; x < m_grid.GetWidth(); x++)
+            for (int j = 0; j < 4; j++)
             {
-                GO15WorldTile worldTile = Instantiate(WorldTilePrefab, m_grid.GetWorldPosition(x, y), Quaternion.identity, transform);
-                GO15Tile tileData = m_grid.GetGridObject(x, y);
-
-                worldTile.SetGO15Manager(this);
-                worldTile.SetGridManager(ref m_grid);
-                worldTile.InitTileData(ref tileData);
-
-                if (x == 3 && y == 0)
-                {
-                    worldTile.EmptyTile = true;
-                    Destroy(worldTile.GetComponentInChildren<MeshRenderer>().gameObject); //makes the tile invissible
-                    Destroy(worldTile.GetComponentInChildren<TextMeshPro>().gameObject);
-                    m_worldTiles.Add(worldTile);
-                    continue;
-                }
-
-                m_worldTiles.Add(worldTile);
+                m_Grid[i, j] = m_TileList[n];
+                //m_Grid[j, i] = gameObject.transform.GetChild(n).GetComponent<GO15Tile>();
+                //m_TileList[n] = m_Grid[i, j];
+                m_TileList[n].SetRowAndColumn(j, i);
+                n++;
+                j++;
             }
+            i++;
         }
     }
 
-    public void ShuffleTile()
+    public void SwapTile(GO15Tile selectedTile, GO15Tile targetTile)
     {
-        List<int> numbersPool = new List<int>();
-        for (int i = 1; i < m_width * m_height; i++) numbersPool.Add(i);
+        int rowS, columnS, rowT, columnT;
 
-        int[] numberConfiguration = new int[m_width * m_height];
-        int index = 0;
+        Vector3 previousPos = selectedTile.transform.position;
+        Vector3 targetPos = targetTile.transform.position;
 
-        foreach (GO15WorldTile worldTile in m_worldTiles)
-        {
+        //get selected tile pos in grid
+        rowS = selectedTile.GetRow();
+        columnS = selectedTile.GetColumn();
 
-            if (worldTile.EmptyTile)
-            {
-                numberConfiguration[index] = 0;
-                index++;
-                continue;
-            }
+        //get target tile pos in grid
+        rowT = targetTile.GetRow();
+        columnT = targetTile.GetColumn();
 
-            int newNumber = numbersPool[Random.Range(0, numbersPool.Count)]; //randomly picks a new number for the current tile 
-            numbersPool.Remove(newNumber);
-            worldTile.SetTileNumber(newNumber);
+        //set selected tile pos in grid and worldSpace
+        selectedTile.transform.position = targetPos;
+        selectedTile.SetRowAndColumn(rowT, columnT);
+        m_Grid[rowT, columnT] = selectedTile;
 
-            numberConfiguration[index] = newNumber;
-            index++;
-        }
-
-        if (GO15Solver.IsSolvable(numberConfiguration, m_grid.GetWidth())) Debug.Log("solvable");
-        else ShuffleTile();
+        //set target tile pos in grid and worldSpace
+        targetTile.transform.position = previousPos;
+        targetTile.SetRowAndColumn(rowS, columnS);
+        m_Grid[rowS, columnS] = targetTile;
     }
 
-    public static void SwapTiles()
+    public void CheckNeighboringObjects(object[] param)
     {
-        //swaps positions in world
-        Vector3 positionA = SelectedTiles[0].transform.position;
-        SelectedTiles[0].transform.position = SelectedTiles[1].transform.position;
-        SelectedTiles[1].transform.position = positionA;
+        GO15Tile selectedTile = m_Grid[(int)param[0], (int)param[1]];
+        GO15Tile targetTile = null;
 
-        //swaps in array
-        int index0 = m_instance.m_worldTiles.FindIndex(value => value == SelectedTiles[0]);
-        int index1 = m_instance.m_worldTiles.FindIndex(value => value == SelectedTiles[1]);
-        m_instance.m_worldTiles[index0] = SelectedTiles[1];
-        m_instance.m_worldTiles[index1] = SelectedTiles[0];
-
-
-        CheckWinCondition();
-    }
-
-
-    private static void CheckWinCondition()
-    {
-        int nextNumber = m_instance.m_worldTiles[1].GetTileNumber();
-        foreach (GO15WorldTile worldTile in m_instance.m_worldTiles)
+        //check up
+        if (selectedTile.GetRow() < 3)
         {
-            if (worldTile.GetTileNumber() == nextNumber - 1)
+            if (m_Grid[(int)param[0] + 1, (int)param[1]].IsEmpty)
             {
-                nextNumber++;
-                if (nextNumber == 17)
-                {
-                    Debug.Log("win");
-                    GameManager.instance.EventManager.TriggerEvent(Constants.GAME15_FINISH_PUZZLE); //win condition
-                    break;
-                }
-            }
-            else
-            {
-                Debug.Log("not win");
-                break;
+                targetTile = m_Grid[(int)param[0] + 1, (int)param[1]];
             }
         }
-    }
 
-    private void SetPositionAndRotation(Transform targetTransform)
-    {
-        transform.rotation = targetTransform.rotation;
-        transform.position = targetTransform.position;
-    }
-
-    private void UpdateTimer()
-    {
-        if (!m_outOfTime)
+        //check down
+        if (selectedTile.GetRow() > 0)
         {
-            //Debug.Log(m_timer);
-            if (m_timer >= 0f) m_timer -= Time.deltaTime;
-            else GameManager.instance.EventManager.TriggerEvent(Constants.GAME15_RESTART_PUZZLE); //lose condition
+            if (m_Grid[(int)param[0] - 1, (int)param[1]].IsEmpty)
+            {
+                targetTile = m_Grid[(int)param[0] - 1, (int)param[1]];
+            }
+
         }
+
+        //check right
+        if (selectedTile.GetColumn()  < 3)
+        {
+            if (m_Grid[(int)param[0], (int)param[1] + 1].IsEmpty)
+            {
+                targetTile = m_Grid[(int)param[0], (int)param[1] + 1];
+            }
+
+        }
+
+        //check left
+        if (selectedTile.GetColumn() > 0)
+        {
+            if (m_Grid[(int)param[0], (int)param[1] - 1])
+            {
+                targetTile = m_Grid[(int)param[0], (int)param[1] - 1];
+            }
+        }
+
+        if (targetTile != null)
+            SwapTile(selectedTile, targetTile);
     }
 
-    /// <summary>
-    /// Start game event
-    /// </summary>
-    public void StartGame(object[] param)
+    public void CheckWin(object[] param)
     {
-        GameTriggered = true;
-        m_timer = DefaultTimer;
-        m_outOfTime = false;
-    }
+        foreach (GO15Tile tile in m_TileList)
+        {
+            if (!tile.IsInPosition) return;
+        }
 
-    /// <summary>
-    /// End game event
-    /// </summary>
-    public void EndGame(object[] param)
-    {
-        GameTriggered = false;
-        m_timer = 0;
-        m_outOfTime = true;
-        CameraTriggerer.gameObject.SetActive(false);
-    }
-
-    /// <summary>
-    /// Reset game event
-    /// </summary>
-    public void ResetGame(object[] param)
-    {
-        GameTriggered = false;
-        m_timer = 0;
-        m_outOfTime = true;
-        ShuffleTile();
+        Debug.Log("WIN GAME OF 15");
     }
 }

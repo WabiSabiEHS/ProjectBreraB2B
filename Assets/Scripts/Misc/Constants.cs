@@ -25,10 +25,6 @@ public static class Constants
     public static string SPAWN_BALL = "SpawnBall";
 
     //---15 GAME---
-    public static string GAME15_START_PUZZLE = "StartPuzzle";
-    public static string GAME15_FINISH_PUZZLE = "StartPuzzle";
-    public static string GAME15_RESTART_PUZZLE = "StartPuzzle";
-
-    public static string GAME15_CHANGE_IMAGE = "ChangeImage";
-    public static string GAME15_CHANGE_IMAGE_POS = "ChangePosition";
+    public static string GO15_MG_SWAP_TILES = "SwapTiles";
+    public static string GO15_MG_CHECK_WIN = "GO15CheckWin";
 }
