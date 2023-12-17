@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject m_MainMenuScreen;
     [SerializeField] private GameObject m_OptionsScreen;
+    [SerializeField] private GameObject m_CreditsScreen;
     [SerializeField] private Canvas m_PauseScreen;
     [SerializeField] private GameObject m_LevelSelectScreen;
 
@@ -48,14 +49,14 @@ public class UIManager : MonoBehaviour
 		ToggleUIScreen(m_OptionsScreen, m_MainMenuScreen);
 	}
 
-	public void GoBackFromLevelSelect()
+	public void GoBackFromCredits()
     {
-        ToggleUIScreen(m_MainMenuScreen, m_LevelSelectScreen);
+        ToggleUIScreen(m_MainMenuScreen, m_CreditsScreen);
     }
 
-    public void GoToLevelSelect()
+    public void GoToCredits()
     {
-        ToggleUIScreen(m_LevelSelectScreen, m_MainMenuScreen);
+        ToggleUIScreen(m_CreditsScreen, m_MainMenuScreen);
     }
 
     /// <summary>
