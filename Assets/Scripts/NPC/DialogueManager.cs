@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour {
 	/// </summary>
 	public void StartMonologue()
 	{
+		//SET NPC SPRITE HERE
         m_NPCNameTextBox.text = m_ActualDialogue.DialogueParts[m_CurrentMonologueIndex].Name;
 
 		m_CurrentText.Clear();
