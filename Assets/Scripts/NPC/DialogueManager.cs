@@ -8,11 +8,12 @@ public class DialogueManager : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI m_NPCNameTextBox;
     [SerializeField] private TextMeshProUGUI m_DialogueTextBox;
-    [SerializeField] private Animator m_Animator;
+    [SerializeField] private Image m_SpriteBox;
 	[SerializeField] private List<Dialogue> m_DialogueList;
 
 	private Dialogue m_ActualDialogue;
 	private List<string> m_CurrentText;
+	private Sprite m_CurrentSprite;
 	private int m_CurrentMonologueIndex;
 
 	// Use this for initialization
@@ -26,7 +27,6 @@ public class DialogueManager : MonoBehaviour {
 	/// <param name="indexDialogue"></param>
 	public void StartDialogue(int indexDialogue)
 	{
-        m_Animator.SetBool("IsOpen", true);
 
         m_ActualDialogue = m_DialogueList[indexDialogue];
 
@@ -38,7 +38,6 @@ public class DialogueManager : MonoBehaviour {
 	/// </summary>
 	public void StartMonologue()
 	{
-		//SET NPC SPRITE HERE
         m_NPCNameTextBox.text = m_ActualDialogue.DialogueParts[m_CurrentMonologueIndex].Name;
 
 		m_CurrentText.Clear();
@@ -49,6 +48,8 @@ public class DialogueManager : MonoBehaviour {
 		{
 			m_CurrentText.Add(sentence);
         }
+
+        m_CurrentSprite = m_ActualDialogue.DialogueParts[m_CurrentMonologueIndex].Sprie;
 
 		DisplayNextSentence();
 	}
@@ -86,6 +87,7 @@ public class DialogueManager : MonoBehaviour {
 	private IEnumerator TypeSentence (string sentence)
 	{
 		m_DialogueTextBox.text = "";
+		m_SpriteBox.sprite = m_CurrentSprite;
 		foreach (char letter in sentence.ToCharArray())
 		{
 			m_DialogueTextBox.text += letter;
@@ -98,7 +100,6 @@ public class DialogueManager : MonoBehaviour {
 	/// </summary>
 	private void EndDialogue()
 	{
-		m_Animator.SetBool("IsOpen", false);
 		m_ActualDialogue = null;
         m_CurrentMonologueIndex = 0;
     }
