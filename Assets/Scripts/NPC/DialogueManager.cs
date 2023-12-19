@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour {
 	[SerializeField] private GameObject m_NPCScreen;
 	[SerializeField] private List<Dialogue> m_DialogueList;
 
+	private bool m_IsInEnglish = false;
+
 	private Dialogue m_ActualDialogue;
 	private List<string> m_CurrentText;
 	private Sprite m_CurrentSprite;
@@ -20,9 +22,14 @@ public class DialogueManager : MonoBehaviour {
 	// Use this for initialization
 	private void Start () {
 		GameManager.instance.EventManager.Register(Constants.START_NPC_DIALOGUE, StartNPCDialogue);
+		GameManager.instance.EventManager.Register(Constants.SET_NPC_LANGUAGE, SetLanguage);
 		m_CurrentText = new List<string>();
 	}
 
+	public void SetLanguage(object[] param)
+	{
+		m_IsInEnglish = PlayerPrefs.GetInt(Constants.SET_NPC_LANGUAGE) != 0;
+	}
 	public void StartNPCDialogue(object[] param)
 	{
 		m_NPCScreen.SetActive(true);
@@ -35,9 +42,10 @@ public class DialogueManager : MonoBehaviour {
 	/// <param name="indexDialogue"></param>
 	public void StartDialogue(int indexDialogue)
 	{
-
-        m_ActualDialogue = m_DialogueList[indexDialogue];
-
+		if (!m_IsInEnglish)
+			m_ActualDialogue = m_DialogueList[indexDialogue];
+		else if (m_IsInEnglish)
+			m_ActualDialogue = m_DialogueList[indexDialogue + 1];
 		StartMonologue();
     }
 

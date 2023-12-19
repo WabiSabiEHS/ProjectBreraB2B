@@ -764,11 +764,8 @@ MonoBehaviour:
     - Name: Tizio
       Sprie: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
       Sentences:
-      - Ciao
-    - Name: Tizio
-      Sprie: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
-      Sentences:
-      - bal bal bla
+      - Ciao come va spero tutto bene
+  - DialogueParts: []
 --- !u!4 &130342634
 Transform:
   m_ObjectHideFlags: 0
