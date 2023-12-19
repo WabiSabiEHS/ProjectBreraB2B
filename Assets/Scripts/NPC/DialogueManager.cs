@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
-    [SerializeField] private TextMeshProUGUI m_NPCNameTextBox;
-    [SerializeField] private TextMeshProUGUI m_DialogueTextBox;
-    [SerializeField] private Image m_SpriteBox;
+	[SerializeField] private TextMeshProUGUI m_NPCNameTextBox;
+	[SerializeField] private TextMeshProUGUI m_DialogueTextBox;
+	[SerializeField] private Image m_SpriteBox;
+	[SerializeField] private GameObject m_NPCScreen;
 	[SerializeField] private List<Dialogue> m_DialogueList;
 
 	private Dialogue m_ActualDialogue;
@@ -18,7 +19,14 @@ public class DialogueManager : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
+		GameManager.instance.EventManager.Register(Constants.START_NPC_DIALOGUE, StartNPCDialogue);
 		m_CurrentText = new List<string>();
+	}
+
+	public void StartNPCDialogue(object[] param)
+	{
+		m_NPCScreen.SetActive(true);
+		StartDialogue((int)param[0]);
 	}
 
 	/// <summary>
@@ -102,5 +110,6 @@ public class DialogueManager : MonoBehaviour {
 	{
 		m_ActualDialogue = null;
         m_CurrentMonologueIndex = 0;
+		m_NPCScreen.SetActive(false);
     }
 }

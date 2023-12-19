@@ -7,6 +7,9 @@ public static class Constants
     public static string TOGGLE_PLAYER_UI = "TogglePlayerUI";
     public static string TOGGLE_PAINTING_DESCRIPTION = "ToggleDescription";
 
+    //---DIALOGUE MANAGER---
+    public static string START_NPC_DIALOGUE = "StartNPCDialogue";
+
     //---CAMERA------
     //rotation
     public static string UPDATE_CAMERA_ROTATION = "UpdateCameraRotation";
