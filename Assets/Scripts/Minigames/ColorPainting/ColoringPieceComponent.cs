@@ -11,6 +11,7 @@ public class ColoringPieceComponent : MonoBehaviour, IPointerClickHandler
     {
         if (GameManager.instance.ColorPaintingManager.DeletePiece(m_RightColor))
         {
+            GameManager.instance.EventManager.TriggerEvent(Constants.COLOR_MG_TILE_COMPLETED);
             gameObject.SetActive(false);
         }
     }
