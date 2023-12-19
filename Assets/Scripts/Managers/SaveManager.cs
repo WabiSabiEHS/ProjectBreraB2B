@@ -32,4 +32,18 @@ public class SaveManager : MonoBehaviour
         string key = (string)param[0];
         PlayerPrefs.GetFloat(key);
     }
+
+    public void SaveBool(object[] param)
+    {
+        string key = (string)param[0];
+        bool value = (bool)param[1];
+        PlayerPrefs.SetInt(key, value ? 1 : 0);
+    }
+
+    public bool LoadBool(object[] param)
+    {
+        string key = (string)param[0];
+        bool value = PlayerPrefs.GetInt(key) != 0;
+        return value;
+    }
 }

@@ -7,9 +7,14 @@ public static class Constants
     public static string TOGGLE_PLAYER_UI = "TogglePlayerUI";
     public static string TOGGLE_PAINTING_DESCRIPTION = "ToggleDescription";
 
+    //---DIALOGUE MANAGER---
+    public static string START_NPC_DIALOGUE = "StartNPCDialogue";
+    public static string SET_NPC_LANGUAGE = "StartNPCDialogue";
+
     //---CAMERA------
     //rotation
     public static string UPDATE_CAMERA_ROTATION = "UpdateCameraRotation";
+
     //zoom
     public static string UPDATE_CAMERA_ZOOMING = "UpdateCameraZooming";
     public static string STOP_CAMERA_ZOOMING = "StopCameraZooming";
@@ -17,6 +22,12 @@ public static class Constants
     //---SAVE MANAGER---
     public static string SAVE_FLOAT = "SaveFloat";
     public static string LOAD_FLOAT = "LoadFloat";
+
+    public static string SAVE_BOOL = "SaveBool";
+    public static string LOAD_BOOL = "Load_Bool";
+
+
+    public static string SM_BOOL_LANGUAGE = "Language";
 
     //---SOUND MANAGER---
     public static string PLAY_SOUND = "PlaySound";
