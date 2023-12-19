@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,9 +13,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Canvas m_PauseScreen;
     [SerializeField] private GameObject m_LevelSelectScreen;
 
-    private void Start()
+    public void SetLanguage(bool value)
     {
-
+        GameManager.instance.EventManager.TriggerEvent(Constants.SAVE_BOOL, Constants.SET_NPC_LANGUAGE, Convert.ToInt32(value));
     }
 
     /// <summary>

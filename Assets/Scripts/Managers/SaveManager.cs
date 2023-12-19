@@ -10,6 +10,7 @@ public class SaveManager : MonoBehaviour
     {
         GameManager.instance.EventManager.Register(Constants.SAVE_FLOAT, SaveFloat);
         GameManager.instance.EventManager.Register(Constants.LOAD_FLOAT, LoadFloat);
+        GameManager.instance.EventManager.Register(Constants.SAVE_BOOL, SaveBool);
     }
 
     /// <summary>
