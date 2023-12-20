@@ -13,7 +13,7 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
     //[SerializeField] NotesID m_PuzzleType;
     [SerializeField] private GameObject m_PuzzleUI;
 
-    private int m_NotesCollectedCount = 0;
+    [HideInInspector] public int NotesCollectedCount = 0;
     //private bool m_IsUnlocked = false;
 
     //private void Start()
@@ -49,8 +49,8 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
         //{
         //    m_IsUnlocked = true;
         //}
-
-        if (m_Notes.Count == m_NotesCollectedCount) return true; 
+        
+        if (m_Notes.Count == NotesCollectedCount) return true; 
         else return false;
     }
 
