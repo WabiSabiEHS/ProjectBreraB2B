@@ -45,10 +45,10 @@ public class NotesManager : MonoBehaviour
                 break;
         }
 
-        if (trigger)
-        {
-            GameManager.instance.EventManager.TriggerEvent(Constants.ACTIVATE_PUZZLE, (NotesID)param[0]);
-        }
+        //if (trigger)
+        //{
+        //    GameManager.instance.EventManager.TriggerEvent(Constants.ACTIVATE_PUZZLE, (NotesID)param[0]);
+        //}
     }
 }
 
