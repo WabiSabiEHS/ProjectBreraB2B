@@ -35,6 +35,10 @@ public static class Constants
     //---PAINTINGS MANAGER---
     public static string ACTIVATE_PUZZLE = "ActivatePuzzle";
     public static string CHANGE_PAINTING_DESCRIPTION = "ChangeDescription";
+    public static string UNLOCK_PUZZLE = "UnlockPainting";
+
+    //---NOTES MANAGER---
+    public static string NOTE_PICK_UP = "NotePickUp";
 
     //---COLOR MINIGAME---
     public static string COLOR_MG_CHANGE_SELECTED_COLOR = "ChangeSelectedColor";

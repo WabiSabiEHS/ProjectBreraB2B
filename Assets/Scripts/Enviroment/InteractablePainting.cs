@@ -8,7 +8,18 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
     [SerializeField] private string m_Description = "";
 
     [SerializeField] private bool m_IsPuzzle = false;
+    
+    [SerializeField] private List<PickUpNotes> m_Notes;
+    //[SerializeField] NotesID m_PuzzleType;
     [SerializeField] private GameObject m_PuzzleUI;
+
+    [HideInInspector] public int NotesCollectedCount = 0;
+    //private bool m_IsUnlocked = false;
+
+    //private void Start()
+    //{
+    //    GameManager.instance.EventManager.Register(Constants.UNLOCK_PUZZLE, UnlockPuzzle);
+    //}
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -19,7 +30,7 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
 
     public void ActivatePuzzle()
     {
-        if (m_IsPuzzle)
+        if (m_IsPuzzle && /*m_IsUnlocked*/ UnlockPuzzle())
         {
             m_PuzzleUI.SetActive(true);
         }
@@ -30,6 +41,17 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
             GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PAINTING_DESCRIPTION, true);
         }
 
+    }
+
+    public bool UnlockPuzzle()
+    {
+        //if ((NotesID)param[0] == m_PuzzleType)
+        //{
+        //    m_IsUnlocked = true;
+        //}
+        
+        if (m_Notes.Count == NotesCollectedCount) return true; 
+        else return false;
     }
 
 }
