@@ -47,4 +47,8 @@ public static class Constants
 
     //---PUZZLE MINIGAME---
     public static string PUZZLE_MG_PIECE_IN_PLACE = "PieceCorrectPlace";
+
+    //---15 GAME---
+    public static string GO15_MG_SWAP_TILES = "SwapTiles";
+    public static string GO15_MG_CHECK_WIN = "GO15CheckWin";
 }
