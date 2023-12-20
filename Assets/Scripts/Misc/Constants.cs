@@ -10,6 +10,7 @@ public static class Constants
     //---DIALOGUE MANAGER---
     public static string START_NPC_DIALOGUE = "StartNPCDialogue";
     public static string SET_NPC_LANGUAGE = "StartNPCDialogue";
+    public static string CHANGE_BUTTON_TRIGGER = "ChangeButtonTrigger";
 
     //---CAMERA------
     //rotation

@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
-	[SerializeField] private TextMeshProUGUI m_NPCNameTextBox;
+
 	[SerializeField] private TextMeshProUGUI m_DialogueTextBox;
 	[SerializeField] private Image m_SpriteBox;
 	[SerializeField] private GameObject m_NPCScreen;
 	[SerializeField] private List<Dialogue> m_DialogueList;
+	[SerializeField] private List<DialogueTrigger> m_ButtonList;
+	private DialogueTrigger m_CurrentButton;
 
 	private bool m_IsInEnglish = false;
 
@@ -23,6 +25,7 @@ public class DialogueManager : MonoBehaviour {
 	private void Start () {
 		GameManager.instance.EventManager.Register(Constants.START_NPC_DIALOGUE, StartNPCDialogue);
 		GameManager.instance.EventManager.Register(Constants.SET_NPC_LANGUAGE, SetLanguage);
+		GameManager.instance.EventManager.Register(Constants.CHANGE_BUTTON_TRIGGER, ChangeButton);
 		m_CurrentText = new List<string>();
 	}
 
@@ -54,7 +57,6 @@ public class DialogueManager : MonoBehaviour {
 	/// </summary>
 	public void StartMonologue()
 	{
-        m_NPCNameTextBox.text = m_ActualDialogue.DialogueParts[m_CurrentMonologueIndex].Name;
 
 		m_CurrentText.Clear();
 
@@ -65,7 +67,7 @@ public class DialogueManager : MonoBehaviour {
 			m_CurrentText.Add(sentence);
         }
 
-        m_CurrentSprite = m_ActualDialogue.DialogueParts[m_CurrentMonologueIndex].Sprie;
+        m_CurrentSprite = m_ActualDialogue.DialogueParts[m_CurrentMonologueIndex].Sprite;
 
 		DisplayNextSentence();
 	}
@@ -120,4 +122,13 @@ public class DialogueManager : MonoBehaviour {
         m_CurrentMonologueIndex = 0;
 		m_NPCScreen.SetActive(false);
     }
+
+	public void ChangeButton(object[] param)
+	{
+		int i = (int)param[0];
+		if (m_CurrentButton != null) m_CurrentButton.gameObject.SetActive(false);
+		m_CurrentButton = m_ButtonList[i];
+		m_CurrentButton.gameObject.SetActive(true);
+	}
+
 }

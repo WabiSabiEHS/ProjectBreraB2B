@@ -13,7 +13,7 @@ public class Monologue
 {
     public string Name;
 
-    public Sprite Sprie; 
+    public Sprite Sprite; 
 
     [TextArea(3, 10)]
     public string[] Sentences;
