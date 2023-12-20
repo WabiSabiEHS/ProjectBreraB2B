@@ -19,14 +19,14 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         m_FollowFinger = true;
-        ToggleOthersClick(false);
+        //ToggleOthersClick(false);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         m_FollowFinger = false;
         PiecePositioning(eventData);
-        ToggleOthersClick(true);
+        //ToggleOthersClick(true);
     }
 
     public void OnPointerMove(PointerEventData eventData)

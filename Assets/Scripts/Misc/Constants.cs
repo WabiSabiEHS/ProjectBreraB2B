@@ -33,6 +33,16 @@ public static class Constants
     //---SOUND MANAGER---
     public static string PLAY_SOUND = "PlaySound";
 
+    public static string SFX_CLUE_NOTE = "ClueNote";
+    public static string SFX_CODE_NUMBER = "CodeNumber";
+    public static string SFX_CODE_NUMBER_CONDITION = "CodeNumberCondition";
+    public static string SFX_GAME_15 = "Game15SFX";
+    public static string SFX_NEG_FEEDBACK = "NegFeedback";
+    public static string SFX_TAP_MINIGAME = "TapMinigame";
+    public static string SFX_TAP_SKIP = "TapSkip";
+    public static string SFX_TAP_UI = "TapUI";
+    public static string SFX_WIN_CONDITION = "WinConditionSFX";
+
     //---PAINTINGS MANAGER---
     public static string ACTIVATE_PUZZLE = "ActivatePuzzle";
     public static string CHANGE_PAINTING_DESCRIPTION = "ChangeDescription";

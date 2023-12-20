@@ -28,6 +28,24 @@ public class AudioManager : MonoBehaviour
         GameManager.instance.EventManager.Register(Constants.PLAY_SOUND, PlaySound);
     }
 
+    public void PlayButtonSound(string param)
+    {
+        int index = -1;
+        for (int i = 0; i < m_AudioValues.Count; i++)
+        {
+            if (m_AudioKeys[i] == param)
+            {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1)
+        {
+            m_AudioSource.clip = m_AudioValues[index];
+            m_AudioSource.Play();
+        }
+    }
+
     public void PlaySound(object[] param)
     {
         int index = -1;
