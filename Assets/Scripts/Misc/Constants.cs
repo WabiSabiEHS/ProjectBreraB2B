@@ -37,6 +37,7 @@ public static class Constants
     public static string ACTIVATE_PUZZLE = "ActivatePuzzle";
     public static string CHANGE_PAINTING_DESCRIPTION = "ChangeDescription";
     public static string UNLOCK_PUZZLE = "UnlockPainting";
+    public static string ACTIVATE_NEW_NOTES = "ActivateNewNotes";
 
     //---NOTES MANAGER---
     public static string NOTE_PICK_UP = "NotePickUp";

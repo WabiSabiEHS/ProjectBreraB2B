@@ -7,6 +7,7 @@ public class PaintingsManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI m_PaintDescription;
     [SerializeField] private GameObject m_DescriptionUI;
+    [SerializeField] private List<GameObject> m_NotesList;
 
     private InteractablePainting m_SelectedPainting;
     private bool m_CanOperDescription = true;
@@ -16,6 +17,13 @@ public class PaintingsManager : MonoBehaviour
     {
         GameManager.instance.EventManager.Register(Constants.CHANGE_PAINTING_DESCRIPTION, ChangeDescription);
         GameManager.instance.EventManager.Register(Constants.TOGGLE_PAINTING_DESCRIPTION, ToggleOpenDescription);
+        GameManager.instance.EventManager.Register(Constants.ACTIVATE_NEW_NOTES, ActivateNewNotes);
+    }
+
+    public void ActivateNewNotes(object[] param)
+    {
+        int i = (int)param[0];
+        m_NotesList[i].SetActive(true);
     }
 
     public void ChangeDescription(object[] param)

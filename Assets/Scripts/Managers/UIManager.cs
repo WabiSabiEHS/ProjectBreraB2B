@@ -116,4 +116,8 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
+    public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
+    }
 }
