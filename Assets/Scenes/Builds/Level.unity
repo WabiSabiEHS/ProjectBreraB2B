@@ -1663,15 +1663,141 @@ MonoBehaviour:
       NPCPhrase: Ciao... sei qui per aiutarmi?
     - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
       NPCPhrase: "Ho girovagato alla ricerca del mio quadro, ma ho dimenticato dov'\xE8."
-    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
-      NPCPhrase: "Ho girovagato alla ricerca del mio quadro, ma ho dimenticato dov'\xE8."
     - NPCSprite: {fileID: 21300000, guid: d8dc3e9ce3633544b9c268387eb20357, type: 3}
       NPCPhrase: Forse possiamo trovare qualcosa di utile in queste stanze.
   - NPCMonologues:
-    - NPCSprite: {fileID: 21300000, guid: d8dc3e9ce3633544b9c268387eb20357, type: 3}
-      NPCPhrase: Frase 3
     - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
-      NPCPhrase: frase 4
+      NPCPhrase: '"Ho un mal di testa tremendo."'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "L'ho scritto io? Mi sento proprio cos\xEC adesso!"
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: Quando piango mi fa sempre male la testa e ho gli occhi gonfi.
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: '"La Palma del Martirio nella mia mano mi fa pensare al mio destino"'
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: 'Palma del Martirio? Lo sapevi che veniva usato come simbolo di
+        vittoria, trionfo, pace e vita eterna? '
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: Solitamente i martiri nei quadri venivano raffigurati con la palma
+        e simboleggiava la "vittoria dello spirito sulla carne".
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: "Questo per\xF2 non riguarda me..."
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: "Non mi \xE8 mai importato di piante o fiori...\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: '"Sono nato nel 1500 ma sono arrivato qui molto dopo, nel 1800" '
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: Ah, non parla di me. Io sono nata nel 1800.
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: 'Cerchiamolo comunque!
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: "Forse pu\xF2 aiutarmi con la mia amnesia!\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Eccolo! "San Pietro Martire tra i santi Nicola e Benedetto"!
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: "Guarda! Qualcosa \xE8 caduto dal quadro. E' un nuovo indizio.\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: "\"La mia casa \xE8 stata distrutta e io sono stato portato qui.\"\n"
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'Mi fa piacere che abbia trovato una nuova casa.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: 'Cerchiamo altri indizi in giro.
+
+'
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: "\"Si vede che il mio maestro \xE8 stato il grande Leonardo da Vinci\""
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Ma certo, il grande Leonardo. Ha davvero lasciato il segno tra
+        gli artisti della sua epoca.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: "Quindi nemmeno questo \xE8 il mio quadro, io sono stata dipinta
+        molto dopo.\n"
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: 'Ma sono sicura di essere italiana! Il mio pittore ha un nome particolare
+        e potrebbe confondere ma ha vissuto in Italia per tutta la sua vita.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Ma guardami! Sembra che stia pian piano ricordando qualche dettaglio
+        su di me!
+
+'
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\"Mi chiedo come si sia sentito Lucifero quando \xE8 stato cacciato
+        dal Paradiso.\"\n\n"
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: 'Sicuramente non ne era entusiasta.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'In qualche modo posso capirlo.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'Mi sembra di avere addosso una sensazione di tristezza ma non so
+        per quale motivo.
+
+'
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: '"Pala dei Tre Arcangeli". E'' sicuramente questo!
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: '"La vergine delle rocce" di Leonardo ha sicuramente ispirato questo
+        artista.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'Guarda i dettagli sui capelli e la posa che hanno gli angeli.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Che quadro spettacolare.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "Un indizio \xE8 caduto dal quadro.\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\"Avevo bisogno di un grande restauro e per fortuna Brera \xE8
+        venuta in mio soccorso.\"\n"
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: 'Forse anche io ho bisogno di essere aggiustata.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "Il mio stato fisico \xE8 impeccabile ma nella mia mente c'\xE8
+        un gran casino.\n"
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "Mi sembra di avere cos\xEC tanto amore da poter dare ma semplicemente
+        non riesco.\n"
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'Questo gran peso che mi porto nel petto sta iniziando a farsi sentire.
+
+'
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\"Avevo accettato il mio destino ma un angelo \xE8 sceso dal cielo
+        per salvarmi.\"\n"
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: "Un angelo verr\xE0 a salvare anche me?\n"
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: Sei forse tu, il mio angelo?
   m_EngNPCDialogueList:
   - NPCMonologues:
     - NPCSprite: {fileID: 0}
@@ -1681,6 +1807,132 @@ MonoBehaviour:
         where it is."
     - NPCSprite: {fileID: 0}
       NPCPhrase: Maybe we can find something useful in these rooms.
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\u201CI\u2019ve got a killer headache\u201D"
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "Did I write this? It\u2019s exactly what I\u2019m feeling!"
+    - NPCSprite: {fileID: 0}
+      NPCPhrase: Crying makes my eyes puffy and my head hurt.
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\u201CThe Palm Branch in my hand reminds me of my fate\u201D"
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: Palm branch? Did you know it used to be a symbol for victory, triumph,
+        peace and eternal life?
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: "Usually in paintings martyrs are depicted with a palm branch, and
+        it means \u201Cvictory of spirit over flesh\u201D."
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: "I guess this doesn\u2019t really apply to me, though."
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: "I\u2019ve never really cared for plants or flowers\u2026\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: "\u201CI was born in 1500 but I\u2019ve arrived here much later,
+        in the 1800\u201D\n"
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "This is\u2026 not me. I was born in the 1800.\n"
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: 'We should find it anyway!
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Maybe they could help me with my amnesia!
+
+'
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: "This is it! \u201CSan Pietro martire tra i santi Nicola e Benedetto\u201D!"
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: "Look! Something fell from the painting. It\u2019s a new clue.\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: "\u201CMy house was demolished and I was brought here.\u201D\n"
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: " I\u2019m glad they found a new home.\n"
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "Let\u2019s look around for more information.\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 1fa8994a20032ce478e69eb0470467cc, type: 3}
+      NPCPhrase: " \u201CMy master was the great Leonardo da Vinci, and it shows\u201D\n"
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Ah yes, indeed. The Great Leonardo. He has made quite an impression
+        on many artists of his era.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: 'So this is still not my painting, I was made much much later.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: "But I\u2019m sure I\u2019m Italian too! My painter\u2019s name
+        could deceive you, but he lived in Italy for all his life.\n"
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: "Hey, look at me! It looks like I\u2019m starting to remember details
+        about me!\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\u201CI wonder how Lucifer felt when he was banned from Heaven\u201D\n"
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "I\u2019m sure he was not happy.\n"
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: ' I can relate to him in a sense.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "I feel like I carry around a feeling of unhappiness, but I\u2019m
+        not sure why.\n"
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: " \u201CPala dei tre Arcangeli\u201D. This is definitely it! (modificato)\n["
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: '"La vergine delle rocce" di Leonardo ha sicuramente ispirato questo
+        artista.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\u201CLa vergine delle rocce\u201D by Leonardo was obviously an
+        inspiration for this artist.\n"
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: 'Look at the background and the details on the hair and pose of
+        the angels.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 713da70d8db072041b259f0c4f722adf, type: 3}
+      NPCPhrase: 'Ahhh, what a stunning painting.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: 'Another clue fell from the painting. '
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: "\u201CI needed big repairs but fortunately Brera helped me out\u201D\n"
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: 'Maybe I need repairs too.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'My flesh is in good condition but my mind is scrambled.
+
+'
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "I feel like I have so much love to give out but I just can\u2019t.\n"
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: 'This heavy burden I carry is really taking a toll on me.
+
+'
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: " \u201CI accepted my fate but an angel from the sky saved me\u201D\n"
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: 'Will an angel put an end to my suffering too?
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: 'Will you be my angel?
+
+'
 --- !u!1 &131200989
 GameObject:
   m_ObjectHideFlags: 0
