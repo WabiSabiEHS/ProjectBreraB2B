@@ -10,6 +10,7 @@ public class PickUpNotes : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("Pick Up Note");
         m_Painting.NotesCollectedCount++;
         //NPCDIALOGUE EVENT HERE
         GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_CLUE_NOTE);

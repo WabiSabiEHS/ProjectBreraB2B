@@ -47,6 +47,7 @@ public class ColorPaintingManager : MonoBehaviour
         if (m_TilesCompletedCount == m_TilesCount)
         {
             GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_WIN_CONDITION);
+            GameManager.instance.EventManager.TriggerEvent(Constants.ACTIVATE_NEW_NOTES, 3);
 
             Debug.Log("WIN PUZZLE");
         }

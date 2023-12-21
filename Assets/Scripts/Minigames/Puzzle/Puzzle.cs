@@ -18,6 +18,7 @@ public class Puzzle : MonoBehaviour
         if (m_PiecesCompletedCount == m_PiecesCount)
         {
             GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_WIN_CONDITION);
+            GameManager.instance.EventManager.TriggerEvent(Constants.ACTIVATE_NEW_NOTES, 1);
 
             Debug.Log("WIN PUZZLE");
         }

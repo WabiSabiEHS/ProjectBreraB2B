@@ -135,7 +135,7 @@ public class TileManager : MonoBehaviour
         }
 
         GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_WIN_CONDITION);
-
+        GameManager.instance.EventManager.TriggerEvent(Constants.ACTIVATE_NEW_NOTES, 2);
         Debug.Log("Won!");
         
         OnGameWon?.Invoke();
