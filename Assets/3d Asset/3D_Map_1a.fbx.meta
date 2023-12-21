@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/3d Asset/3D_Map_1a.fbx.meta
 guid: 36a82aecc9c60ed4790cd7497e2600c2
+========
+guid: 08c079dbd68c33341922d0199700c48c
+>>>>>>>> feature/3D-Art:Assets/3d Asset/3D Models/3D_Balustrade.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
