@@ -41,6 +41,7 @@ public class CodeMGManager : MonoBehaviour
         if (CheckCombination())
         {
             GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_LOOP_SOUND, Constants.MUS_ENDING);
+            GameManager.instance.EventManager.TriggerEvent(Constants.SAVE_BOOL, Constants.SM_BOOL_HAS_WON, true);
         }
         else
         {

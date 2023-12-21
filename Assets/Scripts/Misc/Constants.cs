@@ -29,6 +29,7 @@ public static class Constants
 
 
     public static string SM_BOOL_LANGUAGE = "Language";
+    public static string SM_BOOL_HAS_WON = "SMHasWon";
 
     //---SOUND MANAGER---
     public static string PLAY_SOUND = "PlaySound";
