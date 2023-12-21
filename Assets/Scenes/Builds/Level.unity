@@ -1656,18 +1656,31 @@ MonoBehaviour:
   m_DialogueTextBox: {fileID: 2015677935}
   m_SpriteBox: {fileID: 837996914}
   m_NPCScreen: {fileID: 1215463030}
+  m_PlayerUIScreen: {fileID: 1470304722}
   m_ItaNPCDialogueList:
   - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: Ciao... sei qui per aiutarmi?
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "Ho girovagato alla ricerca del mio quadro, ma ho dimenticato dov'\xE8."
+    - NPCSprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
+      NPCPhrase: "Ho girovagato alla ricerca del mio quadro, ma ho dimenticato dov'\xE8."
     - NPCSprite: {fileID: 21300000, guid: d8dc3e9ce3633544b9c268387eb20357, type: 3}
-      NPCPhrase: 'Frase 1 '
-    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
-      NPCPhrase: frase 2
+      NPCPhrase: Forse possiamo trovare qualcosa di utile in queste stanze.
   - NPCMonologues:
     - NPCSprite: {fileID: 21300000, guid: d8dc3e9ce3633544b9c268387eb20357, type: 3}
       NPCPhrase: Frase 3
     - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
       NPCPhrase: frase 4
-  m_EngNPCDialogueList: []
+  m_EngNPCDialogueList:
+  - NPCMonologues:
+    - NPCSprite: {fileID: 0}
+      NPCPhrase: "Hi there\u2026 are you here to help me?"
+    - NPCSprite: {fileID: 0}
+      NPCPhrase: "I\u2019ve been wandering around looking for my painting but I forgot
+        where it is."
+    - NPCSprite: {fileID: 0}
+      NPCPhrase: Maybe we can find something useful in these rooms.
 --- !u!1 &131200989
 GameObject:
   m_ObjectHideFlags: 0
@@ -8538,7 +8551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c3a8375b03606914bb738183a98ea23e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20727,7 +20740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: '!!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -10,6 +10,7 @@ public class NPCDialogueManager : MonoBehaviour
     [SerializeField] private Image m_SpriteBox;
 
     [SerializeField] private GameObject m_NPCScreen;
+    [SerializeField] private GameObject m_PlayerUIScreen;
 
     [SerializeField] private List<NPCDialogue> m_ItaNPCDialogueList;
     [SerializeField] private List<NPCDialogue> m_EngNPCDialogueList;
@@ -42,6 +43,7 @@ public class NPCDialogueManager : MonoBehaviour
         int i = (int)param[0];
         m_CurrentDialogueIndex = i;
         m_NPCScreen.SetActive(true);
+        m_PlayerUIScreen.SetActive(false);
         ChatNPC();
     }
 
@@ -55,6 +57,7 @@ public class NPCDialogueManager : MonoBehaviour
         else
         {
             m_CurrentMonologueIndex = 0;
+            m_PlayerUIScreen.SetActive(true);
             m_NPCScreen.SetActive(false);
         }
     }
