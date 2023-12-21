@@ -32,5 +32,7 @@ public class DialogueTrigger : MonoBehaviour
 	public void TriggerDialogue (int indexDialogue)
 	{
         m_DialogueManager.StartDialogue(indexDialogue);
-	}
+        GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_TAP_SKIP);
+
+    }
 }

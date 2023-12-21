@@ -32,6 +32,7 @@ public static class Constants
 
     //---SOUND MANAGER---
     public static string PLAY_SOUND = "PlaySound";
+    public static string PLAY_LOOP_SOUND = "PlayLoopSound";
 
     public static string SFX_CLUE_NOTE = "ClueNote";
     public static string SFX_CODE_NUMBER = "CodeNumber";
@@ -42,6 +43,7 @@ public static class Constants
     public static string SFX_TAP_SKIP = "TapSkip";
     public static string SFX_TAP_UI = "TapUI";
     public static string SFX_WIN_CONDITION = "WinConditionSFX";
+    public static string MUS_ENDING = "EndingMusic";
 
     //---PAINTINGS MANAGER---
     public static string ACTIVATE_PUZZLE = "ActivatePuzzle";

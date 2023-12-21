@@ -27,22 +27,28 @@ public class CodeMGManager : MonoBehaviour
             m_Combination[index] = number;
             m_DisplayText.text += number.ToString();
             index++;
-            if (CheckCombination())
-            {
-                Debug.Log("CODE MG WON!!!");
-            }
         }
     }
 
-    public void ResetGame()
+    public void CheckWin()
     {
+        GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_CODE_NUMBER_CONDITION);
         for (int i = 0; i < m_Combination.Length; i++)
         {
             m_Combination[i] = 0;
             i++;
         }
-        m_DisplayText.text = string.Empty;
-        index = 0;
+        if (CheckCombination())
+        {
+            GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_LOOP_SOUND, Constants.MUS_ENDING);
+        }
+        else
+        {
+            GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_NEG_FEEDBACK);
+
+            m_DisplayText.text = string.Empty;
+            index = 0;
+        }
     }
 
     private bool CheckCombination()

@@ -19,6 +19,8 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         m_FollowFinger = true;
+        GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_TAP_MINIGAME);
+
         //ToggleOthersClick(false);
     }
 
@@ -48,6 +50,8 @@ public class PuzzlePiece : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         else
         {
+            GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_NEG_FEEDBACK);
+
             bool touchedPuzzle = false;
             List<RaycastResult> raycastResults = new List<RaycastResult>();
             EventSystem.current.RaycastAll(eventData, raycastResults);

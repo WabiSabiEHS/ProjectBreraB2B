@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
 
         GameManager.instance.EventManager.Register(Constants.PLAY_SOUND, PlaySound);
+        GameManager.instance.EventManager.Register(Constants.PLAY_LOOP_SOUND, PlayLoopSound);
     }
 
     public void PlayButtonSound(string param)
@@ -42,6 +43,25 @@ public class AudioManager : MonoBehaviour
         if (index != -1)
         {
             m_AudioSource.clip = m_AudioValues[index];
+            m_AudioSource.Play();
+        }
+    }
+
+    public void PlayLoopSound(object[] param)
+    {
+        int index = -1;
+        for (int i = 0; i < m_AudioValues.Count; i++)
+        {
+            if (m_AudioKeys[i] == (string)param[0])
+            {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1)
+        {
+            m_AudioSource.clip = m_AudioValues[index];
+            m_AudioSource.loop = true;
             m_AudioSource.Play();
         }
     }

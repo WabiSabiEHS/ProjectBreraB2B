@@ -86,6 +86,8 @@ public class TileManager : MonoBehaviour
             {
                 SwapTiles(_tile, neighborTile);
 
+                GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_GAME_15);
+                
                 CheckWinCondition();
 
                 return;
@@ -131,7 +133,9 @@ public class TileManager : MonoBehaviour
                 val++;
             }
         }
-        
+
+        GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_WIN_CONDITION);
+
         Debug.Log("Won!");
         
         OnGameWon?.Invoke();

@@ -12,6 +12,7 @@ public class PickUpNotes : MonoBehaviour, IPointerClickHandler
     {
         m_Painting.NotesCollectedCount++;
         //NPCDIALOGUE EVENT HERE
+        GameManager.instance.EventManager.TriggerEvent(Constants.PLAY_SOUND, Constants.SFX_CLUE_NOTE);
         gameObject.SetActive(false);
     }
 }
