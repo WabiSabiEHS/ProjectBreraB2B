@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 9
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 588996997}
 --- !u!64 &74039890
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3246,7 +3246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 0
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 652225179}
 --- !u!64 &134415212
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4315,7 +4315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 0
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 652225179}
 --- !u!64 &172551599
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4652,7 +4652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 5
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 1113913240}
 --- !u!64 &184702415
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5640,7 +5640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 7
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 1113913240}
 --- !u!64 &225500334
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7359,7 +7359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 0
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 652225179}
 --- !u!64 &313887439
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20721,7 +20721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 0
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 652225179}
 --- !u!1 &976966723 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6945784207995190703, guid: c3570045e99136149bf2a35b61cef0b4, type: 3}
@@ -24281,7 +24281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 2
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 490705431}
 --- !u!64 &1154142079
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25799,7 +25799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 10
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 588996997}
 --- !u!64 &1224821620
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29572,7 +29572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 6
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 1113913240}
 --- !u!64 &1370463743
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32702,7 +32702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 0
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 588996997}
 --- !u!64 &1502157678
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34060,7 +34060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 1
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 490705431}
 --- !u!64 &1577020977
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38749,7 +38749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DialogueIndex: 3
-  m_Painting: {fileID: 0}
+  m_Painting: {fileID: 490705431}
 --- !u!64 &1772605438
 MeshCollider:
   m_ObjectHideFlags: 0
