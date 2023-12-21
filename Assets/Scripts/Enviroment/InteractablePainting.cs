@@ -35,11 +35,11 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
             m_PuzzleUI.SetActive(true);
         }
 
-        else if (!m_IsPuzzle)
-        {
-            GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI, true);
-            GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PAINTING_DESCRIPTION, true);
-        }
+        //else if (!m_IsPuzzle)
+        //{
+        //    GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI, true);
+        //    GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PAINTING_DESCRIPTION, true);
+        //}
 
     }
 

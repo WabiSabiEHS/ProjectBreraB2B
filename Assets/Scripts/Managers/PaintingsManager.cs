@@ -15,8 +15,8 @@ public class PaintingsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.EventManager.Register(Constants.CHANGE_PAINTING_DESCRIPTION, ChangeDescription);
-        GameManager.instance.EventManager.Register(Constants.TOGGLE_PAINTING_DESCRIPTION, ToggleOpenDescription);
+        //GameManager.instance.EventManager.Register(Constants.CHANGE_PAINTING_DESCRIPTION, ChangeDescription);
+        //GameManager.instance.EventManager.Register(Constants.TOGGLE_PAINTING_DESCRIPTION, ToggleOpenDescription);
         GameManager.instance.EventManager.Register(Constants.ACTIVATE_NEW_NOTES, ActivateNewNotes);
     }
 
