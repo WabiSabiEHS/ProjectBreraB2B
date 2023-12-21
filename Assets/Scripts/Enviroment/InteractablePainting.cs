@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InteractablePainting : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private string m_Description = "";
+    [SerializeField] private int m_DialogueIndex;
 
     [SerializeField] private bool m_IsPuzzle = false;
     
@@ -24,8 +24,8 @@ public class InteractablePainting : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         GameManager.instance.PlayerManager.CanPlayerMove = false;
-        GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI, false);
-        GameManager.instance.EventManager.TriggerEvent(Constants.CHANGE_PAINTING_DESCRIPTION, m_Description, this);
+        //GameManager.instance.EventManager.TriggerEvent(Constants.TOGGLE_PLAYER_UI, false);
+        GameManager.instance.EventManager.TriggerEvent(Constants.NPC_START_DIALOGUE, m_DialogueIndex, true, m_PuzzleUI);
     }
 
     public void ActivatePuzzle()

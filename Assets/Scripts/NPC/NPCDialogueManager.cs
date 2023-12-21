@@ -19,6 +19,9 @@ public class NPCDialogueManager : MonoBehaviour
     private int m_CurrentMonologueIndex = 0;
 
     private bool m_IsInEnglish = false;
+    private bool m_IsPuzzle = false;
+
+    private GameObject m_TempUIpuzzle;
 
     private void Start()
     {
@@ -35,12 +38,15 @@ public class NPCDialogueManager : MonoBehaviour
     {
         m_CurrentDialogueIndex = index;
         m_NPCScreen.SetActive(true);
+        m_PlayerUIScreen.SetActive(false);
         ChatNPC();
     }
 
     public void DisplayNPC(object[] param)
     {
         int i = (int)param[0];
+        m_IsPuzzle = (bool)param[1];
+        m_TempUIpuzzle = (GameObject)param[2];
         m_CurrentDialogueIndex = i;
         m_NPCScreen.SetActive(true);
         m_PlayerUIScreen.SetActive(false);
@@ -57,7 +63,11 @@ public class NPCDialogueManager : MonoBehaviour
         else
         {
             m_CurrentMonologueIndex = 0;
-            m_PlayerUIScreen.SetActive(true);
+            if (!m_IsPuzzle)
+                m_PlayerUIScreen.SetActive(true);
+            else if (m_IsPuzzle)
+                m_TempUIpuzzle.SetActive(true);
+
             m_NPCScreen.SetActive(false);
         }
     }

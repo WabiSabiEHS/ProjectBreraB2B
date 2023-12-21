@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 9
   m_Painting: {fileID: 768289019}
 --- !u!64 &74039890
 MeshCollider:
@@ -1798,6 +1798,17 @@ MonoBehaviour:
       NPCPhrase: "Un angelo verr\xE0 a salvare anche me?\n"
     - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
       NPCPhrase: Sei forse tu, il mio angelo?
+  - NPCMonologues:
+    - NPCSprite: {fileID: 21300000, guid: 163f1be8f5c52f24eb06a0e51b81bbe3, type: 3}
+      NPCPhrase: '"Ho un mal di testa tremendo."
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 15726ad0a4b8f0d49b9809f2b01b427c, type: 3}
+      NPCPhrase: '"La Palma del Martirio nella mia mano mi fa pensare al mio destino"
+
+'
+    - NPCSprite: {fileID: 21300000, guid: 54685d047211267459d1509debaf89bb, type: 3}
+      NPCPhrase: '"Sono nato nel 1500 ma sono arrivato qui molto dopo, nel 1800" '
   m_EngNPCDialogueList:
   - NPCMonologues:
     - NPCSprite: {fileID: 0}
@@ -2780,7 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 5
   m_Painting: {fileID: 1072209965}
 --- !u!64 &184702415
 MeshCollider:
@@ -3257,7 +3268,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3428,7 +3439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 7
   m_Painting: {fileID: 1072209965}
 --- !u!64 &225500334
 MeshCollider:
@@ -7469,7 +7480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb58d509781a214429ace77c100f67b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Color painting minigame
+  m_DialogueIndex: 0
   m_IsPuzzle: 1
   m_Notes:
   - {fileID: 313887438}
@@ -8267,7 +8278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb58d509781a214429ace77c100f67b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Color painting minigame
+  m_DialogueIndex: 0
   m_IsPuzzle: 1
   m_Notes:
   - {fileID: 74039889}
@@ -10656,7 +10667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb58d509781a214429ace77c100f67b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Color painting minigame
+  m_DialogueIndex: 8
   m_IsPuzzle: 1
   m_Notes:
   - {fileID: 184702412}
@@ -11548,7 +11559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 2
   m_Painting: {fileID: 1256962294}
 --- !u!64 &1154142079
 MeshCollider:
@@ -12383,7 +12394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 10
   m_Painting: {fileID: 768289019}
 --- !u!64 &1224821620
 MeshCollider:
@@ -12835,7 +12846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb58d509781a214429ace77c100f67b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Puzzle minigame
+  m_DialogueIndex: 4
   m_IsPuzzle: 1
   m_Notes:
   - {fileID: 1577020974}
@@ -14395,7 +14406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 6
   m_Painting: {fileID: 1072209965}
 --- !u!64 &1370463743
 MeshCollider:
@@ -16579,7 +16590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 1
   m_Painting: {fileID: 1256962294}
 --- !u!64 &1577020977
 MeshCollider:
@@ -18911,7 +18922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080a39050fec1954391b574b89072dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DialogueIndex: 0
+  m_DialogueIndex: 3
   m_Painting: {fileID: 1256962294}
 --- !u!64 &1772605438
 MeshCollider:
