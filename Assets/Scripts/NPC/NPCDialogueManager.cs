@@ -51,7 +51,7 @@ public class NPCDialogueManager : MonoBehaviour
     {
         if (m_CurrentMonologueIndex < m_ItaNPCDialogueList[m_CurrentDialogueIndex].NPCMonologues.Length)
         {
-            StartNPCPhrase();
+            StartNPCPhrase(m_CurrentDialogueIndex, m_CurrentMonologueIndex);
             m_CurrentMonologueIndex++;
         }
         else
@@ -62,16 +62,16 @@ public class NPCDialogueManager : MonoBehaviour
         }
     }
 
-    private void StartNPCPhrase()
+    public void StartNPCPhrase(int dialogueIndex, int monologueIndex)
     {
         if (m_IsInEnglish)
         {
-            m_DialogueTextBox.text = m_EngNPCDialogueList[m_CurrentDialogueIndex].NPCMonologues[m_CurrentMonologueIndex].NPCPhrase;
+            m_DialogueTextBox.text = m_EngNPCDialogueList[dialogueIndex].NPCMonologues[monologueIndex].NPCPhrase;
         }
         else if (!m_IsInEnglish)
         {
-            m_DialogueTextBox.text = m_ItaNPCDialogueList[m_CurrentDialogueIndex].NPCMonologues[m_CurrentMonologueIndex].NPCPhrase;
+            m_DialogueTextBox.text = m_ItaNPCDialogueList[dialogueIndex].NPCMonologues[monologueIndex].NPCPhrase;
         }
-        m_SpriteBox.sprite = m_ItaNPCDialogueList[m_CurrentDialogueIndex].NPCMonologues[m_CurrentMonologueIndex].NPCSprite;
+        m_SpriteBox.sprite = m_ItaNPCDialogueList[dialogueIndex].NPCMonologues[monologueIndex].NPCSprite;
     }
 }

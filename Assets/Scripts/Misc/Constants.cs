@@ -14,6 +14,8 @@ public static class Constants
 
     public static string NPC_START_DIALOGUE = "NpcStartDialogue";
 
+    public static string NPC_HINT_SET_INDEX = "SetIndexHintButton";
+
     //---CAMERA------
     //rotation
     public static string UPDATE_CAMERA_ROTATION = "UpdateCameraRotation";
