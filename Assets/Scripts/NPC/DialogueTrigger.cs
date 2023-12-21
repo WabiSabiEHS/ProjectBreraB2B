@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour
 	{
 		if (index == m_Index)
 		{
-			GameManager.instance.EventManager.TriggerEvent(Constants.CHANGE_BUTTON_TRIGGER, index);
+			//GameManager.instance.EventManager.TriggerEvent(Constants.CHANGE_BUTTON_TRIGGER, index);
 		}
 
 		else return;

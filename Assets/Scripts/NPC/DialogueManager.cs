@@ -23,9 +23,9 @@ public class DialogueManager : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
-		GameManager.instance.EventManager.Register(Constants.START_NPC_DIALOGUE, StartNPCDialogue);
-		GameManager.instance.EventManager.Register(Constants.SET_NPC_LANGUAGE, SetLanguage);
-		GameManager.instance.EventManager.Register(Constants.CHANGE_BUTTON_TRIGGER, ChangeButton);
+		//GameManager.instance.EventManager.Register(Constants.START_NPC_DIALOGUE, StartNPCDialogue);
+		//GameManager.instance.EventManager.Register(Constants.SET_NPC_LANGUAGE, SetLanguage);
+		//GameManager.instance.EventManager.Register(Constants.CHANGE_BUTTON_TRIGGER, ChangeButton);
 		m_CurrentText = new List<string>();
 	}
 

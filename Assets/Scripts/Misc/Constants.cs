@@ -8,9 +8,11 @@ public static class Constants
     public static string TOGGLE_PAINTING_DESCRIPTION = "ToggleDescription";
 
     //---DIALOGUE MANAGER---
-    public static string START_NPC_DIALOGUE = "StartNPCDialogue";
+    public static string OLD_START_NPC_DIALOGUE = "StartNPCDialogue";
     public static string SET_NPC_LANGUAGE = "StartNPCDialogue";
-    public static string CHANGE_BUTTON_TRIGGER = "ChangeButtonTrigger";
+    public static string OLD_CHANGE_BUTTON_TRIGGER = "ChangeButtonTrigger";
+
+    public static string NPC_START_DIALOGUE = "NpcStartDialogue";
 
     //---CAMERA------
     //rotation
